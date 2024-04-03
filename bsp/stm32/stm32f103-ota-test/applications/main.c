@@ -11,9 +11,16 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
+#include "version.h"
+
+#define LOG_TAG              "main"
+#define LOG_LVL              LOG_LVL_DBG
+#include <ulog.h>
 
 int main(void)
 {
+    LOG_D("app version = %s", app_version);
+
     /* set LED0 pin mode to output */
     rt_pin_mode(GET_PIN(C, 13), PIN_MODE_OUTPUT);
 

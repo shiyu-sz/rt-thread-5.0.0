@@ -10,7 +10,7 @@
       <TargetName>rt-thread</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCompiler_506u7</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -70,9 +70,9 @@
             <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>compile_before.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F103xB, __STDC_LIMIT_MACROS, RT_USING_ARMLIBC, USE_HAL_DRIVER, RT_USING_LIBC, __CLK_TCK=RT_TICK_PER_SECOND, __RTTHREAD__</Define>
               <Undefine></Undefine>
-              <IncludePath>board;board\CubeMX_Config\Inc;..\libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;..\..\..\components\drivers\include;..\..\..\components\libc\posix\ipc;applications;..\..\..\components\libc\compilers\common\include;..\..\..\components\libc\compilers\common\extension\fcntl\octal;board\ports;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\CMSIS\Include;..\..\..\components\drivers\include;.;..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;..\..\..\components\libc\compilers\common\extension;..\..\..\components\libc\posix\io\stdio;..\..\..\libcpu\arm\common;..\..\..\include;..\..\..\components\libc\posix\io\poll;..\..\..\components\finsh;..\..\..\components\drivers\include;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\cortex-m3</IncludePath>
+              <IncludePath>..\..\..\components\utilities\ulog;board;board\CubeMX_Config\Inc;..\libraries\STM32F1xx_HAL\CMSIS\Device\ST\STM32F1xx\Include;..\..\..\components\drivers\include;..\..\..\components\libc\posix\ipc;applications;..\..\..\components\libc\compilers\common\include;..\..\..\components\libc\compilers\common\extension\fcntl\octal;board\ports;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\CMSIS\Include;..\..\..\components\drivers\include;.;..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Inc;..\..\..\components\libc\compilers\common\extension;..\..\..\components\libc\posix\io\stdio;..\..\..\libcpu\arm\common;..\..\..\include;..\..\..\components\libc\posix\io\poll;..\..\..\components\finsh;..\..\..\components\drivers\include;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\cortex-m3</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,6 +388,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>version.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\version.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -718,6 +723,21 @@
               <FileName>stm32f1xx_hal_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\STM32F1xx_HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Utilities</GroupName>
+          <Files>
+            <File>
+              <FileName>ulog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\utilities\ulog\ulog.c</FilePath>
+            </File>
+            <File>
+              <FileName>console_be.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\utilities\ulog\backend\console_be.c</FilePath>
             </File>
           </Files>
         </Group>
