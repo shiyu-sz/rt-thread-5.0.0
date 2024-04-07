@@ -51,3 +51,4 @@ tags
 CMakeLists.txt
 cmake-build-debug
 *.mk
+bsp/stm32/stm32f429-ota-test/.settings
