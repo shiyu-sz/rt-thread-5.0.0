@@ -14,6 +14,8 @@
 #include <rtthread.h>
 #include <board.h>
 
+#define RT_APP_PART_ADDR        (0x08020000)
+
 #define FLASH_SIZE_GRANULARITY_16K   (4 * 16 * 1024)
 #define FLASH_SIZE_GRANULARITY_64K   (64 * 1024)
 #define FLASH_SIZE_GRANULARITY_128K  (7 * 128 * 1024)
@@ -39,9 +41,8 @@ extern const struct fal_flash_dev stm32_onchip_flash_128k;
 /* partition table */
 #define FAL_PART_TABLE                                                                                                     \
 {                                                                                                                          \
-    {FAL_PART_MAGIC_WROD, "bootloader", "onchip_flash_16k",  0 , FLASH_SIZE_GRANULARITY_16K , 0}, \
-    {FAL_PART_MAGIC_WROD, "param",      "onchip_flash_64k",  0 , FLASH_SIZE_GRANULARITY_64K , 0}, \
-    {FAL_PART_MAGIC_WROD, "app",        "onchip_flash_128k", 0 , FLASH_SIZE_GRANULARITY_128K, 0}, \
+    {FAL_PART_MAGIC_WROD, "app",        "onchip_flash_128k",        0,      (128*1024), 0}, \
+    {FAL_PART_MAGIC_WROD, "download",   "onchip_flash_128k", (128*1024),    (128*1024), 0}, \
 }
 
 #endif /* FAL_PART_HAS_TABLE_CFG */

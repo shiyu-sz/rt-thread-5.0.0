@@ -73,6 +73,10 @@
 #define MSH_USING_BUILT_IN_COMMANDS
 #define FINSH_USING_DESCRIPTION
 #define FINSH_ARG_MAX 10
+#define RT_USING_FAL
+#define FAL_DEBUG_CONFIG
+#define FAL_DEBUG 1
+#define FAL_PART_HAS_TABLE_CFG
 
 /* Device Drivers */
 
@@ -105,6 +109,7 @@
 
 /* Utilities */
 
+#define RT_USING_RYM
 #define RT_USING_ULOG
 #define ULOG_OUTPUT_LVL_D
 #define ULOG_OUTPUT_LVL 7
@@ -146,6 +151,9 @@
 
 /* IoT Cloud */
 
+#define PKG_USING_OTA_DOWNLOADER
+#define PKG_USING_YMODEM_OTA
+#define PKG_USING_OTA_DOWNLOADER_V100
 
 /* security packages */
 
@@ -265,6 +273,7 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART1
+#define BSP_USING_ON_CHIP_FLASH
 
 /* Board extended module Drivers */
 
