@@ -53,3 +53,4 @@ cmake-build-debug
 *.mk
 bsp/stm32/stm32f429-ota-test/.settings
 bsp/stm32/stm32f429-usb-host/.settings
+bsp/stm32/stm32f429-TinyUSB/.settings
